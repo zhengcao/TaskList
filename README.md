@@ -1,6 +1,6 @@
 # Task List Rails
 
-We are going to build the task list using our new rails knowledge. This project will enable us to keep track of and persist, add, edit and remove tasks.
+We are going to build the task list we built in Sinatra using our new rails knowledge. This project will enable us to keep track of and persist, add, edit and remove tasks.
 
 ## Baseline
 Once you've achieved this baseline, take a walk around the room and see if you can answer questions or help other teams.
