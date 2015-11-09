@@ -7,12 +7,10 @@ Once you've achieved this baseline, take a walk around the room and see if you c
 
 This project...
 
-- Will have our standard GitHub setup (create a branch, fork, switch to your branch)
-- will need to be isolated into a gemset called 'TaskListRails'
-  - create the necessary files for RVM to recognize a gemset
+- Will have our standard Github setup (create a branch, fork, switch to your branch)
 - requires you to create a Rails 4.2.4 application
   - create a controller for your `Tasks`
-  - create and run a model and migration for a `Task` model
+  - create and a `Task` model and run a migration to create that model table
   - conform to Rails conventions on naming and inflection
 
 <!--    
