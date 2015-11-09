@@ -13,6 +13,8 @@ This project...
   - create and a `Task` model and run a migration to create that model's table
   - conform to Rails conventions on naming and inflection
 
+Tinker with your Model in the `rails console` in order to ensure you have created your model appropriately. 
+
 <!--    
 
 ## Wave 1
