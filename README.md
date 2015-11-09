@@ -10,6 +10,7 @@ This project...
 - will need to be isolated into a gemset called 'TaskListRails'
   - create the necessary files for RVM to recognize a gemset
 - requires you to create a Rails 4.2.4 application
+  - create a controller for your `Tasks`
   - create and run a model and migration for a `Task` model
   - conform to Rails conventions on naming and inflection
     
