@@ -11,6 +11,7 @@ This project...
 - requires you to create a Rails 4.2.4 application
   - create a controller for your `Tasks`
   - create and a `Task` model and run a migration to create that model's table
+    - Each task should include _at least_ a name, a description and an indicator for whether or not it is complete
   - conform to Rails conventions on naming and inflection
 
 Tinker with your Model in the `rails console` in order to ensure you have created your model appropriately. 
@@ -24,7 +25,6 @@ This wave is where we will introduce the view layer where we begin interacting w
   - Hint: research `rake db:seed`
 - Set up necessary controller(s) and route(s) that you will need in order to display a task from the database
 - Create a root route for your application that directs users to the list of tasks
-  - The list of tasks should include the name of the task and an indicator of it is complete or not.
   - Each task name in the list should link to a `show` action that will render a new view for the user.
     - The `show` view should include the complete information about the task: name, description, completion status, and completion date.
 - All markup in all views should have semantic relevance.
