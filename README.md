@@ -7,6 +7,7 @@ Once you've achieved this baseline, take a walk around the room and see if you c
 
 This project...
 
+- Will have our standard GitHub setup (create a branch, fork, switch to your branch)
 - will need to be isolated into a gemset called 'TaskListRails'
   - create the necessary files for RVM to recognize a gemset
 - requires you to create a Rails 4.2.4 application
