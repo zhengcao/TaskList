@@ -10,7 +10,7 @@ This project...
 - Will have our standard Github setup (create a branch, fork, switch to your branch)
 - requires you to create a Rails 4.2.4 application
   - create a controller for your `Tasks`
-  - create and a `Task` model and run a migration to create that model table
+  - create and a `Task` model and run a migration to create that model's table
   - conform to Rails conventions on naming and inflection
 
 <!--    
