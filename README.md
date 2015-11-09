@@ -13,7 +13,9 @@ This project...
   - create a controller for your `Tasks`
   - create and run a model and migration for a `Task` model
   - conform to Rails conventions on naming and inflection
+
 <!--    
+
 ## Wave 1
 This wave is where we will introduce the view layer where we begin interacting with our application via the browser.
 
