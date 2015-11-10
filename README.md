@@ -54,7 +54,7 @@ In this wave we will extend the interactivity with users, allowing them to edit 
     - Research: ActiveRecord's `update` method.
   - Link to the `edit` action from the task's `show` page.
   - DRY up your code by reusing the view code from the `new` functionality
-    - Research: Rendering _partials_ in Rails.
+    - Hint: Rendering _partials_ in Rails.
 
 ## Final Wave!
 In this wave, we explore creating ActiveRecord associations by creating `belongs_to` and `has_many` relationships.
