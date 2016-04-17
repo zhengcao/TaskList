@@ -1,35 +1,33 @@
 # Task List Rails
-
-We are going to build the task list we built in Sinatra using our new rails knowledge. This project will enable us to keep track of and persist, add, edit and remove tasks.
+Let's build our Task List in Rails. Solving the same problem--tracking tasks in a web app--will let us focus on following Rails conventions and learning how data flows through a Rails application. This project will enable us to keep track of and persist, add, edit and remove tasks.
 
 ## Baseline
-Once you've achieved this baseline, take a walk around the room and see if you can answer questions or help other teams.
+Once you've achieved this baseline, take a walk around the room and see if you can answer questions or help other folks.
 
 This project...
 
-- Will have our standard Github setup (create a branch, fork, switch to your branch)
-- requires you to create a Rails 4.2.4 application
+- Will have our standard Github setup (fork this repo and clone to your machine)
+- requires you to create a Rails 4.2.6 application
   - create a controller for your `Tasks`
-  - create and a `Task` model and run a migration to create that model's table
-    - Each task should include _at least_ a name, a description and an indicator for whether or not it is complete
+  - create a `Task` model a migration.
+    - create the database schema and tables with `rake db:migrate`
+    - the `Task` model should include _at least_ a name, a description and a completion indicator
   - conform to Rails conventions on naming and inflection
 
-Tinker with your Model in the `rails console` in order to ensure you have created your model appropriately. 
+Tinker with your Model in the `rails console` in order to ensure you have created your model and can interact with it as expected. 
 
 ## Wave 1
-This wave is where we will introduce the view layer where we begin interacting with our application via the browser.
+This wave is where we will introduce the view layer to interact with our application via the browser.
 
-- Use the provided seed data to create a script that will pre-populate your database with a given set of tasks.
+- Use the provided seed data to pre-populate your database with a given set of tasks.
   - Hint: research `rake db:seed`
-- Set up necessary controller(s) and route(s) that you will need in order to display a task from the database
+- Set up necessary controller(s) and route(s) that you will need in order to show a task from the database
 - Create a root route for your application that directs users to the list of tasks
   - Each task name in the list should link to a `show` action that will render a new view for the user.
-    - The `show` view should include the complete information about the task: name, description, completion status, and completion date.
+  - The `show` view should include the complete information about the task: name, description, completion status, and completion date.
 - All markup in all views should have semantic relevance.
 - Add some basic styles to your task list.
   
-<!--    
-
 ## Wave 2
 In this wave we will add the first set of user interactivity and persistence.
 
@@ -43,7 +41,7 @@ In this wave we will add the first set of user interactivity and persistence.
     1. Delete the task from the database and redirect the user back to the list of remaining tasks
 
 ## Wave 3
-In this wave we will extend the interactivity with users, allowing them to edit existing tasks in a couple of different ways. As always, follow RESTful conventions when implementing these features.
+In this wave we will extend the interactivity with users, allowing them to edit existing tasks in a couple of different ways. As always, follow _RESTful_ conventions when implementing these features.
 
 - Add the ability for the user to mark a task complete
   - Add a button to the list of tasks on the home page that, when clicked, will mark a task complete.
@@ -75,4 +73,3 @@ In this wave, we explore creating ActiveRecord associations by creating `belongs
   - The url of this page should look something like `http://localhost:5000/people/1/tasks`.
   - Link to this action from a Person's `show` view.
 - Deploy your completed app to Heroku.
--->
