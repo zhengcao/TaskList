@@ -1,75 +1,66 @@
-# Task List Rails
-Let's build our Task List in Rails. Solving the same problem--tracking tasks in a web app--will let us focus on following Rails conventions and learning how data flows through a Rails application. This project will enable us to keep track of and persist, add, edit and remove tasks.
+# Task List
+Let's build a Task List in Rails! We will solve the problem of tracking tasks in a web application. This project will enable us to keep track of and persist, add, edit and remove tasks. This is an individual Stage 1 project.
+
+## Learning Goals
+Practice all aspects of Rails development.
+- Create a new Rails application
+- Explore each aspect of the Rails Request Cycle: Model, View, Controller
+- Implement RESTful routes using Rails standards
+- Complete all CRUD actions in a Rails application
 
 ## Baseline
-Once you've achieved this baseline, take a walk around the room and see if you can answer questions or help other folks.
+In this baseline, you'll create a new Rails application and get started with two of the major components: route, controller and view.
 
-This project...
-
-- Will have our standard Github setup (fork this repo and clone to your machine)
-- requires you to create a Rails 5 application
-  - create a controller for your `Tasks`
-  - create a `Task` model a migration.
-    - create the database schema and tables with `rake db:migrate`
-    - the `Task` model should include _at least_ a name, a description and a completion indicator
-  - conform to Rails conventions on naming and inflection
-
-Tinker with your Model in the `rails console` in order to ensure you have created your model and can interact with it as expected. 
+- Fork and clone this repository to your computer
+- Create a new Rails application using `rails new .`
+  - create a `Tasks` controller
+  - create a route to view the task `index` page
+  - create a controller action for the task `index` page which contains an array of hard-coded tasks
+  - create an ERB view to display the tasks from the controller action
 
 ## Wave 1
-This wave is where we will introduce the view layer to interact with our application via the browser.
+This wave is where we introduce ActiveRecord to create a model. We use the model to persist our data.
 
-- Use the provided seed data to pre-populate your database with a given set of tasks.
-  - Hint: research `rake db:seed`
-- Set up necessary controller(s) and route(s) that you will need in order to show a task from the database
-- Create a root route for your application that directs users to the list of tasks
-  - Each task name in the list should link to a `show` action that will render a new view for the user.
-  - The `show` view should include the complete information about the task: name, description, completion status, and completion date.
-- All markup in all views should have semantic relevance.
-- Add some basic styles to your task list.
-  
+1. create a migration which will create a new `Task` model
+  - create the database schema and tables by running the `rails db:migrate` command
+  - the `Task` model should include _at least_ a name, a description and a completion date
+  - create at least 2 `Task` model instances using the `rails console`
+1. update the controller's `index` action you created to retrieve and show `all` Task objects from the database
+  - you may need to update the view as well to use the model fields rather than the hard-coded data
+
+
 ## Wave 2
-In this wave we will add the first set of user interactivity and persistence.
+In this wave, we will expand the actions we support and introduce forms for user interactivity and persistence.
 
-- Be able to create a new task:
-  - The home page should contain a link to Add a new task. This will give the user a form to fill out with the appropriate task fields.
-  - After the new task is added, the site should take the user back to the home page which displays the full list of tasks. The new task that was just added should be included in the full list of tasks.
-- Be able to delete an existing task:
-  - Add a route and controller action whose responsibility is deleting a task (RESTful routes)
-  - On the home page, add a button or link for each task that will, once clicked...
-    1. Ask the user to confirm that they definitely want to delete the task.
-    1. Delete the task from the database and redirect the user back to the list of remaining tasks
+1. add support to `show` each task
+  - update the task list to link to a `show` action for each individual task
+  - create a route
+  - create a controller action
+  - create an ERB view
+1. Create a new task:
+  - update the task list to have a link to add a new task
+    - this will give the user a new page with a **form** with the appropriate task fields
+    - the site should take the user back to the task list after the new task is added
 
 ## Wave 3
-In this wave we will extend the interactivity with users, allowing them to edit existing tasks in a couple of different ways. As always, follow _RESTful_ conventions when implementing these features.
+In this wave we will extend the interactivity with users, allowing them to edit existing tasks.
 
-- Add the ability for the user to mark a task complete
-  - Add a button to the list of tasks on the home page that, when clicked, will mark a task complete.
-  - Update the database with the task's completed date
-- Add the ability for the user to edit a task's details.
-  - Add an `edit` action that renders a form allowing the user to update all the fields of a task.
-  - Submitting the form from the `edit` action should _update_ the existing task; not create a new one.
-    - Research: ActiveRecord's `update` method.
-  - Link to the `edit` action from the task's `show` page.
+1. Edit a task
+  - update each task's show page to include an edit link
+    - this will give the user a new page with a **form** that is pre-populated with the data about that task
+    - the site should take the user back to the task's show page after the task is updated
+
+1. **Optional**
   - DRY up your code by reusing the view code from the `new` functionality
-    - Hint: Rendering _partials_ in Rails.
+    - Hint: Rendering _partials_ in Rails
 
-## Final Wave!
-In this wave, we explore creating ActiveRecord associations by creating `belongs_to` and `has_many` relationships.
+## Wave 4
+In this wave, we will add the ability to delete tasks. We will also add the ability for a user to mark a task complete.
 
-- Create a model & migration for a new Person object.
-  - at a minimum, a Person should have a name
-- Create seed data to add at least three Person records to the database.
-- Each Task in your database can be assigned to a Person, indicating that Person is responsible for completing the Task.
-  - Express the relationship between Person and Task using `belongs_to` and `has_many`
-  - Update your Task `index` and `show` actions to include displaying the Person's name to which the Task belongs.
-  - Update your Task's `new` and `edit` actions to allow for selecting an _existing_ Person to which the Task should be associated.
-- Add a new people (the plural of Person) controller with the following routes and actions
-  - `index` action: Show a list of all people in the database.
-    - Link each Person's name to their `show` action.
-    - The index should include a count of how many _uncompleted_ tasks are assigned to each Person.
-  - `show` action: show all of the Person's information
-- Create a custom route and action for showing a complete list of a Person's tasks, both complete and incomplete.
-  - The url of this page should look something like `http://localhost:5000/people/1/tasks`.
-  - Link to this action from a Person's `show` view.
-- Deploy your completed app to Heroku.
+1. Delete a task  
+  On the task list, add a button or link for each task that will, once clicked:
+  1. Ask the user to confirm that they definitely want to delete the task.
+  1. Delete the task from the database and redirect the user back to the list of remaining tasks
+1. Mark a task complete
+  - Add a button to the list of tasks on the home page that, when clicked, will mark a task complete
+  - Update the database with the task's completed date
