@@ -74,3 +74,6 @@ The focus of this project is to familiarize yourself with rails. Design of this 
 ## What We're Looking For
 
 Instructors will be looking for the content [here](feedback.md) when evaluating your project.  
+
+## Due Date
+This project is due Monday April 2nd.  
