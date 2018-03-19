@@ -1,2 +1,9 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>Task Lists</h1>
+<section class="table">
+  <h3>Task</h3>
+  <h3>Deadline</h3>
+  <% @tasks.each do |task| %>
+      <p> <%= link_to task[:title], task_path(task[:id]) %> </p>
+      <p> <%= task[:deadline] %> </p>
+  <% end %>
+</section>
