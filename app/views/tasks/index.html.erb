@@ -1,9 +1,13 @@
 <h1>Task Lists</h1>
 <section class="table">
   <h3>Task</h3>
+  <h3>Description</h3>
   <h3>Deadline</h3>
+  <h3>Complete Date</h3>
   <% @tasks.each do |task| %>
-      <p> <%= link_to task[:title], task_path(task[:id]) %> </p>
-      <p> <%= task[:deadline] %> </p>
+      <p> <%= link_to task.title, task_path(task.id) %> </p>
+      <p> <%= task.description %> </p>
+      <p> <%= task.deadline %> </p>
+      <p> <%= task.completion_date %> </p>
   <% end %>
 </section>
