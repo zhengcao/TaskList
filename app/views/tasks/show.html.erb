@@ -1,2 +1,12 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<h2>Title: <%= @task.title %></h2>
+<p>Description: <%= @task.description %></p>
+<p>Deadline: <%= @task.deadline %></p>
+<p>Completion Date: <%= @task.completion_date %></p>
+<ul>
+  <li>
+    <%= link_to "Edit", edit_task_path %>
+  </li>
+  <li>
+    <%= link_to "Delete", task_path(@task.id), method: :delete %>
+  </li>
+</ul>
