@@ -42,6 +42,15 @@ class TasksController < ApplicationController
     end
   end
 
+  def complete
+    @task = Task.find_by(id: params[:id])
+
+    if @task
+      @task.update(is_complete: true)
+    end
+    redirect_to tasks_path
+  end
+
   def destroy
     id = params[:id]
     @task = Task.find(id)
@@ -50,4 +59,5 @@ class TasksController < ApplicationController
     end
     redirect_to tasks_path
   end
+  
 end

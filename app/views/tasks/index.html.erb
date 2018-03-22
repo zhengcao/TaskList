@@ -7,8 +7,9 @@
       <p> <%= link_to task.title, task_path(task.id) %> </p>
       <p> <%= task.description %> </p>
       <p> <%= task.completion_date %> </p>
-      <%= link_to "Delete", task_path(task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %>
+      <p> <%= task.is_complete? %> </p>
+      <p> <%= link_to "Complete", task_path(task.id), method: :put %> </p>
+      <p> <%= link_to "Delete", task_path(task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %> </p>
+      =============================
   <% end %>
 </section>
-
-<!-- link_to "Delete Image", @image, :confirm => "Are you sure?", :method => :delete -->
