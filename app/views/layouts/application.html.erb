@@ -6,21 +6,27 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag   'normalize.css' %>
+    <%= stylesheet_link_tag   'styles.css' %>
   </head>
 
   <body>
     <header>
-      <nav>
-        <ul>
-          <li>
-            <%= link_to "All Tasks", tasks_path %>
-          </li>
-          <li>
-            <%= link_to "Add Task", new_task_path %>
-          </li>
-        </ul>
-      </nav>
+      <h1>Task List</h1>
     </header>
+    <nav>
+      <ul>
+        <li>
+          <%= link_to "All Tasks", tasks_path %>
+        </li>
+        <li>
+          <%= link_to "Add Task", new_task_path %>
+        </li>
+      </ul>
+    </nav>
     <%= yield %>
+    <footer>
+      <h5>Zheng Cao ©2018</h5>
+    </footer>
   </body>
 </html>
