@@ -1,18 +1,24 @@
 <section class="table">
-  <h3>Task</h3>
-  <h3>Complete Date</h3>
-  <h3>Operations</h3>
+  <!-- <h3>Task</h3> -->
+  <!-- <h3>Complete Date</h3>
+  <h3>Operations</h3> -->
   <% @tasks.each do |task| %>
-      <p> <%= link_to task.title, task_path(task.id) %> </p>
-      <p> <%= task.completion_date %> </p>
-      <p>
-        <% if task.is_complete? %>
-          <%= link_to "Unmark Complete", task_path(task.id), method: :put %>
-        <% else %>
-          <%= link_to "Mark Complete", task_path(task.id), method: :put %>
-        <% end %>
-      </p>
-      <p> <%= link_to "Edit", edit_task_path(task.id) %> </p>
-      <p> <%= link_to "Delete", task_path(task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %> </p>
+      <h3 class="title">→<%= link_to task.title, task_path(task.id) %> </h3>
+      <!-- <p> <%= task.completion_date %> </p> -->
+      <ul>
+        <li>
+          <% if task.is_complete? %>
+            ✅<%= link_to "Unmark Complete", task_path(task.id), method: :put %>
+          <% else %>
+            ☑️<%= link_to "Mark Complete", task_path(task.id), method: :put %>
+          <% end %>
+        </li>
+        <li>
+          📝<%= link_to "Edit", edit_task_path(task.id) %>
+        </li>
+        <li>
+          ❎<%= link_to "Delete", task_path(task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %>
+        </li>
+      </ul>
   <% end %>
 </section>
