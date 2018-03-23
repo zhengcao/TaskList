@@ -1,11 +1,20 @@
-<h2> <%= @task.title %> </h2>
-<p>Description: <%= @task.description %></p>
-<p>Completion Date: <%= @task.completion_date %></p>
-<ul>
-  <li>
-    <%= link_to "Edit", edit_task_path %>
-  </li>
-  <li>
-    <%= link_to "Delete", task_path(@task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %>
-  </li>
-</ul>
+<section class="task_content">
+  <h2> <%= @task.title %> </h2>
+  <p><strong>Description:</strong> <%= @task.description %></p>
+  <p><strong>Completion Date:</strong> <%= @task.completion_date %></p>
+  <ul>
+    <li>
+      <% if @task.is_complete? %>
+        ✅<%= link_to "Unmark Complete", task_path(@task.id), method: :put %>
+      <% else %>
+        ☑️<%= link_to "Mark Complete", task_path(@task.id), method: :put %>
+      <% end %>
+    </li>
+    <li>
+      🖌<%= link_to "Edit", edit_task_path(@task.id) %>
+    </li>
+    <li>
+      ❎<%= link_to "Delete", task_path(@task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %>
+    </li>
+  </ul>
+</section>

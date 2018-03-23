@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order("created_at DESC")
   end
 
   def new
@@ -56,7 +56,7 @@ class TasksController < ApplicationController
       @task.save
     end
 
-    redirect_to tasks_path
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy
