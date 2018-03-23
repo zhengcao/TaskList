@@ -1,15 +1,19 @@
 <h1>Task Lists</h1>
 <section class="table">
   <h3>Task</h3>
-  <h3>Description</h3>
   <h3>Complete Date</h3>
+  <h3>Operations</h3>
   <% @tasks.each do |task| %>
       <p> <%= link_to task.title, task_path(task.id) %> </p>
-      <p> <%= task.description %> </p>
       <p> <%= task.completion_date %> </p>
-      <p> <%= task.is_complete? %> </p>
-      <p> <%= link_to "Complete", task_path(task.id), method: :put %> </p>
+      <p>
+        <% if task.is_complete? %>
+          <%= link_to "Unmark Complete", task_path(task.id), method: :put %>
+        <% else %>
+          <%= link_to "Mark Complete", task_path(task.id), method: :put %>
+        <% end %>
+      </p>
+      <p> <%= link_to "Edit", edit_task_path(task.id) %> </p>
       <p> <%= link_to "Delete", task_path(task.id), :data => {:confirm => 'Are you sure?'}, method: :delete %> </p>
-      =============================
   <% end %>
 </section>
