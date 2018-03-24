@@ -1,7 +1,11 @@
 <section class="task_content">
   <h2> <%= @task.title %> </h2>
   <p><strong>Description:</strong> <%= @task.description %></p>
-  <p><strong>Completion Date:</strong> <%= @task.completion_date %></p>
+  <p><strong>Completion Date:</strong>
+    <% if @task.completion_date %>
+      <%= Date.parse(@task.completion_date) %>
+    <% end %>
+  </p>
   <ul>
     <li>
       <% if @task.is_complete? %>
