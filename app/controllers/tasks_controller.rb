@@ -49,7 +49,7 @@ class TasksController < ApplicationController
       @task.update(is_complete: !@task.is_complete)
 
       if @task.is_complete
-        @task.completion_date = @task.updated_at
+        @task.completion_date = Time.now
       else
         @task.completion_date = nil
       end
