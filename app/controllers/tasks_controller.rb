@@ -9,9 +9,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new
-    @task.title = params[:task][:title]
-    @task.description = params[:task][:description]
+    @task = Task.new(task_params)
     if @task.save
       redirect_to tasks_path
     else
@@ -31,10 +29,7 @@ class TasksController < ApplicationController
     @task = Task.find_by(id: params[:id])
 
     if @task
-      @task.title = params[:task][:title]
-      @task.description = params[:task][:description]
-
-      if @task.save
+      if @task.update(task_params)
         redirect_to task_path
       else
         render :edit
@@ -53,6 +48,7 @@ class TasksController < ApplicationController
       else
         @task.completion_date = nil
       end
+      
       @task.save
     end
 
@@ -66,6 +62,12 @@ class TasksController < ApplicationController
       @task.destroy
     end
     redirect_to tasks_path
+  end
+
+  private
+
+  def task_params
+    return params.require(:task).permit(:title, :description, :completion_date, :is_complete)
   end
 
 end
