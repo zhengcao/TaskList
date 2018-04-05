@@ -1,5 +1,15 @@
 <h2 class="page_title"> <%= page_title %> </h2>
 
+<% if @task.errors.any? %>
+  <ul class="errors">
+    <% @task.errors.each do |field, message| %>
+      <li>
+        <strong><%= field.capitalize %>: </strong><%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @task do |f| %>
   <%= f.label :title %>
   <br />
